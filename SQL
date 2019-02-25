@@ -1,0 +1,28 @@
+#To retrieve entire dataset regarding waste and diversion
+1.SELECT * FROM `bigquery-public-data.austin_waste.waste_and_diversion` LIMIT 1000
+#To retrieve data for load weight in the descending order
+2.SELECT * FROM `bigquery-public-data.austin_waste.waste_and_diversion`
+Order by load_weight DESC
+#To retrieve data for load type bulk
+3.SELECT * FROM `bigquery-public-data.austin_waste.waste_and_diversion`
+where load_type= 'BULK'
+#To obtain unique load type
+4.SELECT count(distinct(load_type)) From `bigquery-public-data.austin_waste.waste_and_diversion`
+#To obtain average of load weight
+5.SELECT AVG(load_weight) FROM `bigquery-public-data.austin_waste.waste_and_diversion`
+#result 11671.470
+#To obtain maximum load weight
+6.SELECT Max(load_weight) FROM `bigquery-public-data.austin_waste.waste_and_diversion`
+#result 1562821
+#To obtain minimum load weight
+7.SELECT Min(load_weight) FROM `bigquery-public-data.austin_waste.waste_and_diversion`
+#result -4480
+#To retrieve data for load weight in ascending order
+8.SELECT * FROM `bigquery-public-data.austin_waste.waste_and_diversion`
+order by load_weight ASC
+#result data type load weight in ascending order
+#To select particular dropoff site MRF
+9.SELECT dropoff_site='MRF' FROM `bigquery-public-data.austin_waste.waste_and_diversion`
+#To obtain route number DF1 with load type Bulk
+10.SELECT * FROM `bigquery-public-data.austin_waste.waste_and_diversion`
+#Where route_number='DF1'AND load_type='BULK'
